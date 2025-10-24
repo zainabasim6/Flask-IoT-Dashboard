@@ -1,4 +1,4 @@
-﻿import sqlite3
+import sqlite3
 import os
 
 # Create SQLite database file
@@ -53,7 +53,12 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE NOT NULL,
             password TEXT NOT NULL,
-            email TEXT
+            first_name TEXT,
+            last_name TEXT,
+            email TEXT,
+            phone TEXT,
+            last_login TIMESTAMP,
+            api_key TEXT
         )
     ''')
     
@@ -62,6 +67,7 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             device_name TEXT,
             device_id TEXT UNIQUE,
+            username TEXT,
             status TEXT,
             last_seen TIMESTAMP
         )
